@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html>
-   <head>
-      <title>Ben's Tech Tips</title>
-    
-   </head>
-   <body>
-      <h1>Ben's Tech Tips</h1>
-      <h3>Coming Soon</h3>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/QtBDL8EiNZo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-   </body>
-</html>
+<head>
+<title>Start</title>
+ 
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+<meta name="msapplication-TileColor" content="#2d89ef">
+<meta name="theme-color" content="#ffffff">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+background-image: url('/23117.jpeg');
+}
+
+/* Style the header */
+.header {
+  padding: 20px;
+  text-align: center;
+font-family: 'Open Sans', sans-serif;
+font-weight: 700;
+    height: 200px;
+    width: 400px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -200px;
+}
+
+p {
+font-family: 'Open Sans', sans-serif;  
+font-size: 20px;
+font-weight: 400;
+
+}
+
+h2 {
+font-family: 'Open Sans', sans-serif;  
+font-size: 30px;
+font-weight: 700;
+
+}
+
+h5 {
+font-family: 'Open Sans', sans-serif;  
+font-size: 15px;
+font-weight: 400;
+
+}
+
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1 id="demo"></h1>
+
+
+<script>
+const time = new Date().getHours();
+let greeting;
+if (time < 10) {
+  greeting = "Good morning, Benjamin";
+} else if (time < 20) {
+  greeting = "Good day, Benjamin";
+} else {
+  greeting = "Good evening, Benjamin";
+}
+document.getElementById("demo").innerHTML = greeting;
+</script>
+</div>
+
+</body>
+<html>
