@@ -64,7 +64,7 @@ font-weight: 400;
 
 <div class="header">
   <h2 id="demo"></h2>
-
+ 
 
 <script>
 const time = new Date().getHours();
@@ -78,6 +78,23 @@ if (time < 10) {
 }
 document.getElementById("demo").innerHTML = greeting;
 </script>
+ <h5 id="demo"> </h5>
+  
+  <script>
+  function getWeather(city, callback) {
+  var url = 'http://api.openweathermap.org/data/2.5/weather';
+  $.ajax({
+    dataType: "jsonp",
+    url: url,
+    jsonCallback: 'jsonp',
+    data: { q: city },
+    cache: false,
+    success: function (data) {
+      callback(data.main.temp);
+    }
+  });
+}
+  </script>
 </div>
 
 </body>
