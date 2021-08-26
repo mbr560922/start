@@ -1,101 +1,56 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 <head>
-<title>Start</title>
- 
-
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#2d89ef">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body {
-background-image: url('/23117.jpeg');
-}
-
-/* Style the header */
-.header {
-  padding: 20px;
-  text-align: center;
-font-family: 'Open Sans', sans-serif;
-font-weight: 700;
-    height: 400px;
-    width: 800px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    margin-top: -300px;
-    margin-left: -420px;
-}
-
-
 p {
-font-family: 'Open Sans', sans-serif;  
-font-size: 20px;
-font-weight: 400;
-
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
 }
-
-h2 {
-font-family: 'Open Sans', sans-serif;  
-font-size: 60px;
-font-weight: 700;
-
-}
-
-h5 {
-font-family: 'Open Sans', sans-serif;  
-font-size: 15px;
-font-weight: 400;
-
-}
-
+p1 {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
 }
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h2 id="demo"></h2>
- 
+<p1 style=text-align: center;> Back to School 2021 </p1>
+<br>
+<p id="demo"></p>
 
 <script>
-const time = new Date().getHours();
-let greeting;
-if (time < 10) {
-  greeting = "Good morning, Benjamin";
-} else if (time < 20) {
-  greeting = "Good day, Benjamin";
-} else {
-  greeting = "Good evening, Benjamin";
-}
-document.getElementById("demo").innerHTML = greeting;
+// Set the date we're counting down to
+var countDownDate = new Date("Sept 7, 2021 8:40:00").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get today's date and time
+  var now = new Date().getTime();
+    
+  // Find the distance between now and the count down date
+  var distance = countDownDate - now;
+    
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  // Output the result in an element with id="demo"
+  document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+    
+  // If the count down is over, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
 </script>
- <h5 id="demo"> </h5>
-  
-  <script>
-  function getWeather(city, callback) {
-  var url = 'http://api.openweathermap.org/data/2.5/weather';
-  $.ajax({
-    dataType: "jsonp",
-    url: url,
-    jsonCallback: 'jsonp',
-    data: { q: city },
-    cache: false,
-    success: function (data) {
-      callback(data.main.temp);
-    }
-  });
-}
-  </script>
-</div>
 
 </body>
-<html>
+</html>
